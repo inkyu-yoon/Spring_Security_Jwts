@@ -7,10 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import practice.security.Service.UserService;
-import practice.security.domain.Response;
-import practice.security.domain.User;
-import practice.security.domain.UserJoinRequest;
-import practice.security.domain.UserJoinResponse;
+import practice.security.domain.*;
 
 @RestController
 @RequestMapping("/api/v1/users")
@@ -28,5 +25,11 @@ public class UserController {
         UserJoinResponse userJoinResponse = new UserJoinResponse(user.getUserAccount());
 
         return Response.success(userJoinResponse);
+    }
+
+    @PostMapping("/login")
+    public Response<UserLoginResponse> login(@RequestBody UserLoginRequest userLoginRequest) {
+        String token = userService.login(userLoginRequest.getUserAccount(), userLoginRequest.getPassword());
+        return Response.success(new UserLoginResponse(token));
     }
 }
