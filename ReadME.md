@@ -3,8 +3,8 @@
 # 가장 간단한 모델로 구현하기
 
 - [회원가입](#----)
-    * [Response 클래스 구현](#response-------)
-    * [엔티티, DTO 구현](#-----dto---)
+    * [Response 클래스 구현](#Response 클래스 구현)
+    * [Entity, DTO 구현](#-----dto---)
     * [Repository, Service 구현](#repository--service---)
     * [AppException 정의](#appexception---)
     * [BCryptPasswordEncoder](#bcryptpasswordencoder)
@@ -50,7 +50,7 @@ public class Response<T> {
 
 <br>
 
-## 엔티티, DTO 구현
+## Entity, DTO 구현
 
 ```java
 import lombok.Getter;
