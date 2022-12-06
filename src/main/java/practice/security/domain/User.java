@@ -25,9 +25,4 @@ public class User {
         this.password = password;
     }
 
-    public User(UserJoinRequest userJoinRequest) {
-        this.userAccount = userJoinRequest.getUserAccount();
-        this.password = userJoinRequest.getPassword();
-    }
-
 }

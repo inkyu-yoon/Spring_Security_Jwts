@@ -25,7 +25,8 @@ public class UserController {
         String encodedPassword = encoder.encode(userJoinRequest.getPassword());
         User user = new User(userJoinRequest.getUserAccount(), encodedPassword);
         userService.join(user);
-        UserJoinResponse userJoinResponse = new UserJoinResponse(user);
+        UserJoinResponse userJoinResponse = new UserJoinResponse(user.getUserAccount());
+
         return Response.success(userJoinResponse);
     }
 }

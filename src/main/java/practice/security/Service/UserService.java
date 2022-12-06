@@ -2,7 +2,6 @@ package practice.security.Service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import practice.security.domain.User;
 import practice.security.exception.AppException;
 import practice.security.exception.ErrorCode;
