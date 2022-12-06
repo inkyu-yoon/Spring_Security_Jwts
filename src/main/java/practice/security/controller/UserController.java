@@ -1,6 +1,8 @@
 package practice.security.controller;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,6 +14,7 @@ import practice.security.domain.*;
 @RestController
 @RequestMapping("/api/v1/users")
 @RequiredArgsConstructor
+@Slf4j
 public class UserController {
 
     private final UserService userService;
@@ -31,5 +34,14 @@ public class UserController {
     public Response<UserLoginResponse> login(@RequestBody UserLoginRequest userLoginRequest) {
         String token = userService.login(userLoginRequest.getUserAccount(), userLoginRequest.getPassword());
         return Response.success(new UserLoginResponse(token));
+    }
+
+    @PostMapping("/hello")
+    public String hello(@RequestBody UserLoginRequest userLoginRequest, Authentication authentication) {
+
+        if (authentication.isAuthenticated()) {
+            return "안녕";
+        }
+        return "실패";
     }
 }
