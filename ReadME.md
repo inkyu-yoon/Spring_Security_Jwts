@@ -4,16 +4,16 @@
 
 - [회원가입](#----)
     * [Response 클래스 구현](#Response)
-    * [Entity, DTO 구현](#Entity&DTO)
-    * [Repository, Service 구현](#Repository&Service)
-    * [AppException 정의](#appexception---)
+    * [Entity, DTO 구현](#Entity-DTO)
+    * [Repository, Service 구현](#Repository-Service)
+    * [AppException 정의 및 구현](#AppException)
     * [BCryptPasswordEncoder](#bcryptpasswordencoder)
-    * [Controller](#controller)
+    * [Controller](#join-controller)
 - [로그인 구현하기](#--------)
-    * [DTO 준비](#dto---)
-    * [JwtTokenUtil (토큰 생성기) 구현](#jwttokenutil------------)
-    * [UserService 로그인 메서드 추가](#userservice-----------)
-    * [Controller](#controller-1)
+    * [DTO 준비](#dto)
+    * [JwtTokenUtil (토큰 생성기) 구현](#jwttokenutil)
+    * [UserService 로그인 메서드 추가](#userservice)
+    * [Controller](#Login-Controller)
 - [토큰으로 권한 부여하기](#------------)
 
 <br>
@@ -50,7 +50,7 @@ public class Response<T> {
 
 <br>
 
-## Entity&DTO
+## Entity DTO
 
 ```java
 import lombok.Getter;
@@ -124,7 +124,7 @@ public class UserJoinResponse {
 
 
 
-## Repository&Service
+## Repository Service
 
 ```java
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -181,7 +181,7 @@ public class UserService {
 <br>
 
 
-## AppException 정의
+## AppException
 
 ```java
 @Getter
@@ -265,7 +265,7 @@ public class EncryptorConfig {
 <br>
 
 
-## Controller
+## Join Controller
 
 ```java
 import lombok.RequiredArgsConstructor;
@@ -314,7 +314,7 @@ public class UserController {
 
 <br>
 
-## DTO 준비
+## DTO
 
 ```java
 import lombok.Getter;
@@ -345,7 +345,8 @@ public class UserLoginResponse {
 
 <br>
 
-## JwtTokenUtil (토큰 생성기) 구현
+## JwtTokenUtil
+
 
 ```yaml
 jwt:
@@ -396,7 +397,7 @@ public class JwtTokenUtil {
 
 <br>
 
-## UserService 로그인 메서드 추가
+## UserService
 
 ```JAVA
 import lombok.RequiredArgsConstructor;
@@ -455,7 +456,7 @@ public class UserService {
 
 <br>
 
-## Controller
+## Login Controller
 
 ```java
 import lombok.RequiredArgsConstructor;
