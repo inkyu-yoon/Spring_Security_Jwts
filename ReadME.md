@@ -3,9 +3,9 @@
 # 가장 간단한 모델로 구현하기
 
 - [회원가입](#----)
-    * [Response 클래스 구현](#Response 클래스 구현)
-    * [Entity, DTO 구현](#-----dto---)
-    * [Repository, Service 구현](#repository--service---)
+    * [Response 클래스 구현](#Response)
+    * [Entity, DTO 구현](#Entity&DTO)
+    * [Repository, Service 구현](#Repository&Service)
     * [AppException 정의](#appexception---)
     * [BCryptPasswordEncoder](#bcryptpasswordencoder)
     * [Controller](#controller)
@@ -22,7 +22,7 @@
 
 <br>
 
-## Response 클래스 구현
+## Response
 
 ```java
 import lombok.AllArgsConstructor;
@@ -50,7 +50,7 @@ public class Response<T> {
 
 <br>
 
-## Entity, DTO 구현
+## Entity&DTO
 
 ```java
 import lombok.Getter;
@@ -124,7 +124,7 @@ public class UserJoinResponse {
 
 
 
-## Repository, Service 구현
+## Repository&Service
 
 ```java
 import org.springframework.data.jpa.repository.JpaRepository;
