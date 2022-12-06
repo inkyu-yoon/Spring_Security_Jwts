@@ -3,7 +3,7 @@ package practice.security.domain;
 import lombok.Getter;
 
 @Getter
-public class UserLoginRequest {
+public class UserJoinRequest {
 
     private String userId;
     private String password;
