@@ -15,13 +15,18 @@ public class User {
     @Column(name = "user_id")
     private Long id;
 
-    @Column(name = "user_account_id")
-    private String userId;
+    @Column(name = "user_account")
+    private String userAccount;
 
     private String password;
 
+    public User(String userAccount, String password) {
+        this.userAccount = userAccount;
+        this.password = password;
+    }
+
     public User(UserJoinRequest userJoinRequest) {
-        this.userId = userJoinRequest.getUserId();
+        this.userAccount = userJoinRequest.getUserAccount();
         this.password = userJoinRequest.getPassword();
     }
 
